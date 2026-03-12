@@ -5,16 +5,16 @@ def create_quiz():
     question = input("Ange fråga (q för att sluta)")
 
     while question != "q":
-        answers = input("Ange korrekta svar på frågan")
+        answers = input("Ange korrekta svar på frågan (separera med : om det finns flera)")
 
         json_data = {
             "name" : name,
             "question" : question,
             "answers" : answers
         }
-        
+
         with open("quiz.json", "a") as f:
-            f.write(json_data):
+            json.dump(json.dumps(json_data), f)
 
 
 
